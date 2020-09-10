@@ -1,10 +1,18 @@
+require('./config/config');
 const express = require('express');
 const app = express();
+
+const path = require('path');
+// const publicPath = path.resolve(__dirname, '../public');
 const mysql = require('mysql');
 
 
-app.get('/', (req, res) => {
+// app.use(express.static(publicPath));
 
+// app.use(express.static(__dirname + '/public'));
+
+app.get('/', (req, res) => {
+    let a = [];
     const connection = mysql.createConnection({
         host: 'mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com',
         user: 'bsale_test',
@@ -21,14 +29,17 @@ app.get('/', (req, res) => {
     });
 
     let sql = 'SELECT * FROM product';
-    let query = connection.query(sql, function(error, results, fields) {
+    connection.query(sql, function(error, results, fields) {
         if (error) throw error;
-        console.log(results);
+
         connection.end();
+        console.log(results);
+        // res.send(results);
         res.send(results);
 
     });
-
 });
 
-app.listen(3000);
+app.listen(process.env.PORT);
+
+/********************************* */
