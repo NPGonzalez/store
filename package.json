@@ -1,22 +1,25 @@
 {
-  "name": "store",
-  "version": "1.0.0",
-  "description": "Online Store BSale",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "Vanilla",
-    "JavaScript",
-    "CSS",
-    "MySQL"
-  ],
-  "author": "Nayarett González",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^7.8.1",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0"
-  }
+    "name": "store",
+    "version": "1.0.0",
+    "description": "Online Store BSale",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "Vanilla",
+        "JavaScript",
+        "CSS",
+        "MySQL"
+    ],
+    "author": "Nayarett González",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^7.8.1",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-plugin-import": "^2.22.0"
+    },
+    "dependencies": {
+        "express": "^4.17.1"
+    }
 }
