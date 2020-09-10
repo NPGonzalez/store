@@ -20,11 +20,17 @@ app.get('/', (req, res) => {
         }
     });
 
+    let sql = 'SELECT * FROM product';
+    let query = connection.query(sql, function(error, results, fields) {
+        if (error) throw error;
+        console.log(results);
 
-    res.send('HOLA');
+
+        connection.end();
+        res.send(results);
+
+    });
 
 });
-
-
 
 app.listen(3000);
