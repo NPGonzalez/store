@@ -24,8 +24,6 @@ app.get('/', (req, res) => {
     let query = connection.query(sql, function(error, results, fields) {
         if (error) throw error;
         console.log(results);
-
-
         connection.end();
         res.send(results);
 
